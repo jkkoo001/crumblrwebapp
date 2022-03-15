@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav th:fragment="navbar" class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #fadf46;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="./images/logo.png" alt="crumblr logo" width="150" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-2 mb-2 mb-lg-0 justify-content-end">
+            <li class="nav-item align-self-center">
+                <a class="nav-link active" aria-current="page" th:href="@{index}">Home</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link active" aria-current="page" th:href="@{about}">About</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link active" aria-current="page" th:href="@{products}">Crumbs</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link active" aria-current="page" th:href="@{login}">Login</a>
+            </li>
+
+            <!-- Insert log in or log out nav link, depends on the authentication status from the backend configuration
+                that we did for the WebSecurityConfig Class-->
+            <!--
+            <div sec:authorize="isAuthenticated()">
+                <form id="logOut" th:action="@{/logout}" method="post">
+                    <li class="nav-item"><a class="nav-link" onclick="document.getElementById('logOut').submit();"> LOG OUT </a></li>
+                </form>
+            </div>
+
+
+            <div sec:authorize="isAnonymous()">
+                <li class="nav-item"><a class="nav-link" th:href="@{login}"> LOG IN </a></li>
+            </div>
+            -->
+        </ul>
+    </div>
+
+</nav>
+<!-- End of Navigation Bar -->
+
+</body>
+</html>

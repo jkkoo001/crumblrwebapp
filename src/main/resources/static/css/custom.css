@@ -1,0 +1,86 @@
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about-text, .col, .photo {
+    text-align: center;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-caption > h5 {
+    font-size: 5vw;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.carousel-caption > p {
+    font-size: 3vw;
+    text-shadow: 2px 2px 5px #000;
+}
+.carousel-caption > h1, .carousel-caption > h3, .carousel-caption > h4 {
+    text-shadow: 2px 2px 5px #000;
+}
+
+.nav-link {
+    color: black;
+}
+
+#about-us {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#pillars, #values {
+    background: rgba(250, 223, 70, 0.3);
+    margin: 5%;
+    padding: 40px;
+}
+
+#purpose {
+    padding-top: 50px;
+}
+
+#category-top {
+    margin: 50px 5% 0 5%;
+}
+
+.photo {
+    padding-top: 50px;
+}
+
+.jumbotron {
+    padding: 50px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.modal-header > h3 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#team {
+    margin: 50px;
+}
+
+.team-info {
+    width: 250px;
+    border: 15px solid rgba(250, 223, 70, 0.3);
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 720px) {
+    .welcome-text {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
