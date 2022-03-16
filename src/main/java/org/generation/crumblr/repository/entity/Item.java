@@ -1,13 +1,12 @@
 package org.generation.crumblr.repository.entity;
 
 import org.generation.crumblr.controller.dto.ItemDTO;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 
 @Entity
+@Table(name = "products")
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +15,14 @@ public class Item {
     private String description;
     private String imageUrl;
     private double price;
+
+    // @Size(min = 1)
+
+    /*@ManyToOne
+    @JoinTable(name = "category",
+                joinColumns = @JoinColumn(name = "category_id", referencedColumnName = "category_id"))
+    private Category category;*/
+
 
     public Item() {
     }
@@ -26,7 +33,14 @@ public class Item {
         this.description = itemDTO.getDescription();
         this.imageUrl = itemDTO.getImageUrl();
         this.price = itemDTO.getPrice();
+
+        //to include the category ID
     }
+
+    /*public Category getCategory()
+    {
+        return category;
+    }*/
 
     public Integer getId() {
         return id;

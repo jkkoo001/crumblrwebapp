@@ -8,12 +8,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 
-//	@Value("${image.folder}")
-//	private String imageFolder;
-	// now imageFolder variable the value = productimages/images
+@Value("${image.folder}")
+private String imageFolder;
+	// now imageFolder variable the value = images
 
 
 	public void addViewControllers(ViewControllerRegistry registry) {
@@ -33,14 +34,14 @@ public class MvcConfig implements WebMvcConfigurer {
 			.addResourceLocations("classpath:/static/")
 			.setCachePeriod(0);
 
-		//expose the productimages folder to allow external client to access the files from the server
-//		Path uploadDir = Paths.get(imageFolder);
-//		String uploadPath = uploadDir.toFile().getAbsolutePath();
-//
-//		// ** to access all the images
-//		registry.addResourceHandler("/" + imageFolder + "/**")
-//			.addResourceLocations("file:" + uploadPath + "/")
-//			.setCachePeriod(0);
+		//expose the images folder to allow external client to access the files from the server
+		Path uploadDir = Paths.get(imageFolder);
+		String uploadPath = uploadDir.toFile().getAbsolutePath();
+
+		// ** to access all the images
+		registry.addResourceHandler("/" + imageFolder + "/**")
+			.addResourceLocations("file:" + uploadPath + "/")
+			.setCachePeriod(0);
 
 	}  // override to add resource handler
 

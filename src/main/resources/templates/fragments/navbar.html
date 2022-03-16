@@ -28,9 +28,18 @@
             <li class="nav-item align-self-center">
                 <a class="nav-link active" aria-current="page" th:href="@{products}">Crumbs</a>
             </li>
-            <li class="nav-item align-self-center">
-                <a class="nav-link active" aria-current="page" th:href="@{login}">Login</a>
-            </li>
+            <div sec:authorize="isAnonymous()">
+                <li class="nav-item align-self-center">
+                    <a class="nav-link active" aria-current="page" th:href="@{login}">Login</a>
+                </li>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <form id="logOut" th:action="@{/logout}" method="post">
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" onclick="document.getElementById('logOut').submit();">Log Out</a>
+                    </li>
+                </form>
+            </div>
 
             <!-- Insert log in or log out nav link, depends on the authentication status from the backend configuration
                 that we did for the WebSecurityConfig Class-->

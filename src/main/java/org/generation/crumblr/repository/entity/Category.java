@@ -1,15 +1,15 @@
 package org.generation.crumblr.repository.entity;
 
 import org.generation.crumblr.controller.dto.CategoryDTO;
+import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
 
+	@Id
 	private String id;
 	private String name;
 
@@ -21,6 +21,9 @@ public class Category {
 		this.name = categoryDTO.getCategory();
 
 	}
+
+	@OneToMany(mappedBy = "Category")
+	private Item item;
 
 	public String getId() {
 		return id;
