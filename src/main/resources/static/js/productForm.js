@@ -1,19 +1,21 @@
-const productList = [];
+/*const productList = [];
 
 function addProduct() {
 
     const name = document.querySelector("#productName").value;
     const category = document.querySelector("#category").value;
+    const price = document.querySelector("#price").value;
     const description = document.querySelector("#description").value;
     const image = document.querySelector("#formFileLg").value;
-    const price = document.querySelector("#price").value;
+
 
     const productDetails = {
         name: name,
-        category:category,
+        category: category,
+        price: price,
         description: description,
         image: image,
-        price: price,
+
     }
 
     productList.push(productDetails);
@@ -22,14 +24,7 @@ function addProduct() {
     alert("Product Added !");
 
 } //End of addProduct function
-
-
-///////////
-
-
-//Step: 3
-//
-//Add the codes in the productForm.js” using FormData to fetch the form values and pass the values to the backend for processing.
+*/
 
 //fetch from category table
 
@@ -44,10 +39,12 @@ newItemForm.addEventListener('submit', (event) => {
     event.preventDefault();
     // Select the inputs
     const newItemNameInput = document.querySelector('#productName');
+    const newItemCategory = document.querySelector('#category');
+    const newItemPrice = document.querySelector('#price');
     const newItemDescription = document.querySelector('#description');
     const newItemImageUrl = document.querySelector('#formFileLg');
-    const newItemPrice = document.querySelector('#price');
-    const newItemCategory = document.querySelector('#category');
+
+
 
     /*
         Do the Validation code here
@@ -55,6 +52,8 @@ newItemForm.addEventListener('submit', (event) => {
 
     // Get the values of the inputs - variable names to be same as MySQL columns
     const name = newItemNameInput.value;
+    const category = newItemCategory.value;
+    const price = newItemPrice.value;
     const description = newItemDescription.value;
     // For HTML5 spec - a file uploaded to the browser should not reveal the real local
     // path from the user machine based on security. Browser will append a fakepath
@@ -63,18 +62,20 @@ newItemForm.addEventListener('submit', (event) => {
     console.log(newItemImageUrl.value);  // reflect the path of the image that uploaded
     const imageUrl = newItemImageUrl.value.replace("C:\\fakepath\\", "");
     // img url = t-shirt_new.jpg
-    const category = newItemCategory.value;
-    const price = newItemPrice.value;
+
+
 
     // Clear the form
     newItemNameInput.value = '';
-    newItemDescription.value = '';
-    newItemImageUrl.value = '';
     newItemCategory.value = '';
     newItemPrice.value = '';
+    newItemDescription.value = '';
+    newItemImageUrl.value = '';
+
+
 
     // Add the task to the task manager
-    productsControl.addItem(name, description, imageUrl,category, price, storeImage);
+    productsControl.addItem(name, description, imageUrl, price, category, storeImage);
 
 });
 
