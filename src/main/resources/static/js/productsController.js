@@ -117,7 +117,7 @@ class ProductsController
         {
             const item = this._items[i];            //assign the individual item to the variable
 
-            const productHTML = createHTMLList(i, item.name, item.description, item.imageUrl,item.price);
+            const productHTML = createHTMLList(i, item.name, item.imageUrl, item.price);
 
             productHTMLList.push(productHTML);
         }
