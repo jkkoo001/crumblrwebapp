@@ -19,37 +19,42 @@
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-8 col-md-6 col-lg-4">
-            <div class="text-center mt-5 mb-5"><h1>Add Product</h1></div>
+            <div class="text-center mt-3 mb-5"><h1>Add Product</h1></div>
 
                 <!-- Start of Add Product Form -->
                 <form id="newItemForm" enctype="multipart/form-data">
                     <div class="form-floating mb-3 input-group-lg">
-                        <input type="text" class="form-control" id="productName" placeholder="productName" required /><label for="productName">Product Name</label>
+                        <input type="text" class="form-control" id="newItemNameInput" placeholder="newItemNameInput" required /><label for="newItemNameInput">Product Name</label>
                     </div>
+
+                    <div class="form-floating mb-3 input-group-lg">
+                        <textarea class="form-control" id="newItemDescription" name="newItemDescription" placeholder="newItemDescription" style="height: 200px" required ></textarea><label for="newItemDescription">Product Description</label>
+                    </div>
+
                     <div>
-                        <select id="category" class="form-select form-select-md mb-3" aria-label="select category" required >
-                        <option value="">Select Category</option>
-                        <option value="1">Bread</option>
-                        <option value="2">Cakes</option>
-                        <option value="3">Cookies</option>
-                        <option value="4">Pastries</option>
-                        </select>
+                        <label for="newItemImageFile" class="form-label">Choose Product Photo</label>
+                        <input class="form-control form-control-md mb-3" id="newItemImageFile" name="newItemImageFile" type="file" accept="image/*" required />
                     </div>
+
                     <div class="form-floating mb-3 input-group-lg">
                         <div class="form-floating mb-3">
-                            <input type="number" min="1" class="form-control" id="price" placeholder="product price" required />
-                            <label for="price">Price</label>
+                            <input type="number" min="1" class="form-control" id="newItemPrice" placeholder="newItemPrice" required />
+                            <label for="newItemPrice">Price</label>
                         </div>
                     </div>
-                    <div class="form-floating mb-3 input-group-lg">
-                        <textarea class="form-control" id="description" name="description" placeholder="Enter product description" style="height: 200px" required ></textarea><label for="description">Product Description</label>
-                    </div>
+
                     <div>
-                        <label for="formFileLg" class="form-label">Choose Product Photo</label>
-                        <input class="form-control form-control-md mb-5" id="formFileLg" name="formFileLg" type="file" accept="image/*" required />
+                        <select id="newItemCategory" class="form-select form-select-md mb-5" aria-label="select category" required >
+                        <option value="">Select Category</option>
+                        <option value="C001">Cookies</option>
+                        <option value="C002">Cupcakes</option>
+                        <option value="C003">Bread</option>
+                        <option value="C004">Pastries</option>
+                        </select>
                     </div>
+
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary btn-lg mx-3 mb-5">Add</button>
+                        <button type="submit" class="btn btn-primary btn-lg mx-3 mb-5">Add Item</button>
                         <!-- <button type="button" class="btn btn-secondary btn-lg mx-3 mb-5">Cancel</button> -->
                     </div>
                 </form>

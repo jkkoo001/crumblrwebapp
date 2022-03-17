@@ -38,11 +38,14 @@ newItemForm.addEventListener('submit', (event) => {
     // Prevent default action
     event.preventDefault();
     // Select the inputs
-    const newItemNameInput = document.querySelector('#productName');
-    const newItemCategory = document.querySelector('#category');
-    const newItemPrice = document.querySelector('#price');
-    const newItemDescription = document.querySelector('#description');
-    const newItemImageUrl = document.querySelector('#formFileLg');
+    const newItemNameInput = document.querySelector('#newItemNameInput');
+    const newItemDescription = document.querySelector('#newItemDescription');
+    const newItemImageUrl = document.querySelector('#newItemImageFile');
+    const newItemPrice = document.querySelector('#newItemPrice');
+    const newItemCategory = document.querySelector('#newItemCategory');
+
+
+
 
 
 
@@ -52,17 +55,16 @@ newItemForm.addEventListener('submit', (event) => {
 
     // Get the values of the inputs - variable names to be same as MySQL columns
     const name = newItemNameInput.value;
-    const category = newItemCategory.value;
-    const price = newItemPrice.value;
     const description = newItemDescription.value;
+
     // For HTML5 spec - a file uploaded to the browser should not reveal the real local
     // path from the user machine based on security. Browser will append a fakepath
 //    (C:\fakepath\t-shirt_new.jpg) to the path for the file information
-
-    console.log(newItemImageUrl.value);  // reflect the path of the image that uploaded
     const imageUrl = newItemImageUrl.value.replace("C:\\fakepath\\", "");
-    // img url = t-shirt_new.jpg
 
+    const price = newItemPrice.value;
+    const category_id = newItemCategory.value;
+    //console.log(category_id);
 
 
     // Clear the form
@@ -75,12 +77,12 @@ newItemForm.addEventListener('submit', (event) => {
 
 
     // Add the task to the task manager
-    productsControl.addItem(name, description, imageUrl, price, category, storeImage);
+    productsControl.addItem(name, description, imageUrl, price, category_id, storeImage);
 
 });
 
 // select file input
-const input = document.querySelector('#formFileLg');
+const input = document.querySelector('#newItemImageFile');
 
 // add event listener
 input.addEventListener('change', () => {

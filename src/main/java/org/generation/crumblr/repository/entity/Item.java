@@ -40,6 +40,7 @@ public class Item {
         this.description = itemDTO.getDescription();
         this.imageUrl = itemDTO.getImageUrl();
         this.price = itemDTO.getPrice();
+        //this.category = getCategoryId();
 
         //to include the category ID
     }
