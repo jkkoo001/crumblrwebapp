@@ -1,43 +1,43 @@
 package org.generation.crumblr.repository.entity;
 
 import org.generation.crumblr.controller.dto.CategoryDTO;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Category {
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private String category_id;
 	private String name;
 
 	public Category() {
 	}
 
 	public Category(CategoryDTO categoryDTO) {
-		this.id = categoryDTO.getId();
+		this.category_id= categoryDTO.getId();
 		this.name = categoryDTO.getCategory();
 
 	}
 
-	@OneToMany(mappedBy = "Category")
-	private Item item;
+	@OneToMany(mappedBy = "category")
+	private List<Item> item;
 
 	public String getId() {
-		return id;
+		return category_id;
 	}
 
-	public void setId() {
-		this.id = id;
+	public void setId(String id) {
+		this.category_id = id;
 	}
 
 	public String getCategory() {
 		return name;
 	}
 
-	public void setCategory() {
+	public void setCategory(String name) {
 		this.name = name;
 	}
 
@@ -45,7 +45,7 @@ public class Category {
 	@Override
 	public String toString()
 	{
-		return "Category {" + "id=" + id + ", name='" + name + '}';
+		return "Category {" + "id=" + category_id + ", name='" + name + '}';
 	}
 
 
