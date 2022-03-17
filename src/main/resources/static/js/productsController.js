@@ -4,13 +4,13 @@
     const createHTMLList = (index, name, imageURL,price) =>
     `
     <div class="col-lg-4">
-    <div class="card" style="width: 18rem;">
+    <div class="card mx-auto mb-5" style="width: 20rem;">
         <img src=${imageURL} class="card-img-top"
-            alt="image">
+            alt="${name}" height="300" style="object-fit: cover;">
         <div class="card-body">
             <h5 class="card-title">${name}</h5>
-            <p class="card-text">${price}</p>
-            <a id="${index}" href="#" class="btn btn-primary" data-toggle="modal" data-target="#productModal">More</a>
+            <h5 class="card-text">$${price}</p>
+            <a id="${index}" href="#" class="btn btn-primary" data-toggle="modal" data-target="#productModal">Details</a>
         </div>
     </div>
     </div>
