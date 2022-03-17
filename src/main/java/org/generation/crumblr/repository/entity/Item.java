@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer product_id;
     private String name;
     private String description;
     private String imageUrl;
@@ -23,9 +23,16 @@ public class Item {
                 joinColumns = @JoinColumn(name = "category_id", referencedColumnName = "category_id"))
     private Category category;*/
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="category_id")
+    private Category category;
+
+
 
     public Item() {
     }
+
+
 
     public Item(ItemDTO itemDTO) {
 
@@ -42,19 +49,24 @@ public class Item {
         return category;
     }*/
 
+    public String getCategoryId() { return category.getId(); }
+
+    public String getCategoryName() { return category.getCategory(); }
+
+
     public Integer getId() {
-        return id;
+        return product_id;
     }
 
-    public void setId() {
-        this.id = id;
+    public void setId(Integer id) {
+        this.product_id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName() {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -62,7 +74,7 @@ public class Item {
         return description;
     }
 
-    public void setDescription() {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -70,7 +82,7 @@ public class Item {
         return imageUrl;
     }
 
-    public void setImageUrl() {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
@@ -85,7 +97,7 @@ public class Item {
     @Override
     public String toString()
     {
-        return "Item{" + "id=" + id + ", name='" + name + '\'' + ", description='" + description + '\'' + ", imageUrl='"
+        return "Item{" + "id=" + product_id + ", name='" + name + '\'' + ", description='" + description + '\'' + ", imageUrl='"
                 + imageUrl + '\'' + ", price='" + price + '}';
     }
 }
