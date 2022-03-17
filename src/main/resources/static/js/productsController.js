@@ -1,10 +1,8 @@
 
-
-
-    const createHTMLList = (index, name, imageURL,price) =>
+    const createHTMLList = (index, name, imageURL, price) =>
     `
-    <div class="col-lg-4">
-    <div class="card mx-auto mb-5" style="width: 20rem;">
+    <div class="col-lg-4 col-md-4 col-sm-6">
+    <div class="card mx-auto mb-5" style="width: 15rem;">
         <img src=${imageURL} class="card-img-top"
             alt="${name}" height="300" style="object-fit: cover;">
         <div class="card-body">
@@ -23,9 +21,8 @@
             document.querySelector("#modalImg").src = item.imageUrl;
             document.querySelector("#modalDescription").innerText = item.description;
             document.querySelector("#modalPrice").innerText = item.price;
-
-
         }
+
 
 
 class ProductsController
@@ -37,7 +34,7 @@ class ProductsController
 
     //method to add the items into the array
 
-       addItem(name, description, imageUrl, price, category, imageObject)
+       addItem(name, description, imageUrl, price, category_id, imageObject)
            {
            // default is GET
            // fetch POST HTTP method to send the data to the backend via the API
@@ -47,7 +44,7 @@ class ProductsController
                formData.append('description', description);
                formData.append('imageUrl', imageUrl);
                formData.append('price', price);
-               formData.append('category', category);
+               formData.append('category_id', category_id);
                formData.append('imagefile',imageObject);
 
               fetch('http://localhost:8080/item/add', {
@@ -75,10 +72,7 @@ class ProductsController
            productController._item =[];
 
         //fetch data from database using the REST API endpoint from Spring Boot
-       // IP address 192.168.86.121
-//        fetch('http://192.168.86.121:8080/item/all')
             fetch('http://localhost:8080/item/all')
-//           fetch('http://127.0.0.1:8080/item/all')
                .then((resp) => resp.json())
                .then(function(data) {
                    console.log("2. receive data")

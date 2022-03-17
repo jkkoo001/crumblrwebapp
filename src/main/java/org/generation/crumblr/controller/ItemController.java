@@ -46,21 +46,21 @@ public class ItemController {
         itemService.delete(id);
     }
 
-    // 4. client send a POST HTTP req with all the item data (name, description, image filename, style, price, image object)
+    // 4. client send a POST HTTP req with all the item data (name, description, image filename, price, category_id, image object)
     @CrossOrigin
     @PostMapping("/add")
     public void save(  @RequestParam(name="name", required = true) String name,
                        @RequestParam(name="description", required = true) String description,
                        @RequestParam(name="imageUrl", required = true) String imageUrl,
                        @RequestParam(name="price", required = true) double price,
-                       @RequestParam(name="category_id", required = true) String category,
+                       @RequestParam(name="category_id", required = true) String category_id,
                        @RequestParam("imagefile") MultipartFile multipartFile) throws IOException {
 
         // part 1: provide the ability to save the image file into the directory in the server
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);
 
-        // part 2: other data (name description, .. etc) store into the database e.g. productimages/images/t-shirt_new.jpg
+        // part 2: other data (name description, .. etc) store into the database e.g. images/t-shirt_new.jpg
         String fullPath = imageFolder + '/' + imageUrl;
 
         // create an instance object of the ItemDTO (Data Transfer Object) to store all the data that is sent from the client
