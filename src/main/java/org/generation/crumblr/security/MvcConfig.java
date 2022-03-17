@@ -14,7 +14,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
 @Value("${image.folder}")
 private String imageFolder;
-	// now imageFolder variable the value = images
+	//now imageFolder variable the value = images
 
 
 	public void addViewControllers(ViewControllerRegistry registry) {

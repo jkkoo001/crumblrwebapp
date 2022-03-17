@@ -31,6 +31,8 @@ function addProduct() {
 //
 //Add the codes in the productForm.js” using FormData to fetch the form values and pass the values to the backend for processing.
 
+//fetch from category table
+
 
 const productsControl = new ProductsController();
 var storeImage = ""
