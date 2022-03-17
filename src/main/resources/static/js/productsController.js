@@ -4,7 +4,7 @@
     const createHTMLList = (index, name, imageURL,price) =>
     `
     <div class="col-lg-4">
-    <div class="card" style="width: 15rem;">
+    <div class="card mx-auto mb-5" style="width: 20rem;">
         <img src=${imageURL} class="card-img-top"
             alt="${name}" height="300" style="object-fit: cover;">
         <div class="card-body">
