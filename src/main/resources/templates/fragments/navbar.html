@@ -9,7 +9,7 @@
 <!-- Navigation Bar -->
 <nav th:fragment="navbar" class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #fadf46;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" th:href="@{index}">
             <img src="./images/logo.png" alt="crumblr logo" width="150" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
