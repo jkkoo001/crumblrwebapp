@@ -3,6 +3,10 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
     <title>Title</title>
 </head>
 <body>
@@ -36,7 +40,7 @@
             <div sec:authorize="isAuthenticated()">
                 <form id="logOut" th:action="@{/logout}" method="post">
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" onclick="document.getElementById('logOut').submit();">Log Out</a>
+                        <a class="nav-link active" onclick="document.getElementById('logOut').submit();">Log Out</a>
                     </li>
                 </form>
             </div>
