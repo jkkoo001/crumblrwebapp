@@ -70,7 +70,7 @@ class ProductsController
     {
         //fetch the items from the database using the API
            var productController = this;
-           productController._item =[];
+           productController._items = [];
 
         //fetch data from database using the REST API endpoint from Spring Boot
             fetch('http://localhost:8080/item/all')
@@ -92,26 +92,25 @@ class ProductsController
                        productController._items.push(itemObj);
                  });
 
-
                  // Filtering
+
                  if (selectedCategory == '') {
                     productController._items = productController._items;
-                 //console.log("none");
                  }
-                 else {
+                 else if (typeof selectedCategory != "undefined") {
                     productController._items = productController._items.filter(item => item.category == selectedCategory);
-                    console.log(productController._items);
                  }
 
-                productController.renderProductPage();
+
+                 productController.renderProductPage();
 
                })
                .catch(function(error) {
                    console.log(error);
                });
 
-    }
 
+    }
 
 
     renderProductPage()
@@ -139,9 +138,7 @@ class ProductsController
             document.getElementById(i).addEventListener("click", function() { displayProductDetails(item);} );
         }
 
-
     }
 
 
 }   //End of ProductsController class
-

@@ -40,7 +40,7 @@
             <!--<div sec:authorize="isAuthenticated()">-->
                 <form id="logOut" th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()" class="align-self-center">
                     <li class="nav-item">
-                        <a class="nav-link active" onclick="document.getElementById('logOut').submit();">Logout</a>
+                        <a class="nav-link active" style="cursor: pointer;" onclick="document.getElementById('logOut').submit();">Logout</a>
                     </li>
                 </form>
             <!--</div>-->
