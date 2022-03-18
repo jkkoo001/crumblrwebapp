@@ -1,4 +1,4 @@
-
+//For product modal popup
     const createHTMLList = (index, name, imageURL, price) =>
     `
     <div class="col-lg-4 col-md-4 col-sm-6">
@@ -23,13 +23,15 @@
             document.querySelector("#modalPrice").innerText = item.price;
         }
 
+//End of product modal popup
 
 
 class ProductsController
 {
     constructor()
     {
-        this._items = [];       //create an array to store the details of product items
+        this._items = [];
+        //create an array to store the details of product items
     }
 
     //method to add the items into the array
@@ -54,18 +56,17 @@ class ProductsController
                     .then(function(response) {
                         console.log(response.status); // Will show you the status
                         if (response.ok) {
-                            alert("Successfully Added Product!")
+                            alert("Successfully added product!")
                         }
                     })
                     .catch((error) => {
                         console.error('Error:', error);
-                        alert("Error adding item to Product")
+                        alert("Error adding product!")
                     });
            }
 
 
-
-    displayItem()
+    displayItem(selectedCategory)
     {
         //fetch the items from the database using the API
            var productController = this;
@@ -85,19 +86,29 @@ class ProductsController
                            description: item.description,
                            imageUrl: item.imageUrl,
                            price: item.price,
-                           category: item.category,
+                           category: item.category_id,
                       };
                       // push to array of objects
                        productController._items.push(itemObj);
                  });
 
-                 productController.renderProductPage();
+
+                 // Filtering
+                 if (selectedCategory == '') {
+                    productController._items = productController._items;
+                 //console.log("none");
+                 }
+                 else {
+                    productController._items = productController._items.filter(item => item.category == selectedCategory);
+                    console.log(productController._items);
+                 }
+
+                productController.renderProductPage();
 
                })
                .catch(function(error) {
                    console.log(error);
                });
-
 
     }
 
@@ -133,10 +144,4 @@ class ProductsController
 
 
 }   //End of ProductsController class
-
-
-
-
-
-
 

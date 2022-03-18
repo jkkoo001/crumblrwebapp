@@ -45,10 +45,6 @@ newItemForm.addEventListener('submit', (event) => {
     const newItemCategory = document.querySelector('#newItemCategory');
 
 
-
-
-
-
     /*
         Do the Validation code here
     */
