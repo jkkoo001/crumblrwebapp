@@ -64,7 +64,7 @@ public class ItemController {
         String fullPath = imageFolder + '/' + imageUrl;
 
         // create an instance object of the ItemDTO (Data Transfer Object) to store all the data that is sent from the client
-        ItemDTO itemDto = new ItemDTO(name, description, fullPath, price);
+        ItemDTO itemDto = new ItemDTO(name, description, fullPath, price, category_id);
         itemService.save(new Item(itemDto));
     }
 }

@@ -15,6 +15,7 @@ public class Item {
     private String description;
     private String imageUrl;
     private double price;
+    private String category_id;
 
     // @Size(min = 1)
 
@@ -24,7 +25,7 @@ public class Item {
     private Category category;*/
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="category_id")
+    @JoinColumn(name="category_id", insertable=false, updatable=false)
     private Category category;
 
 
@@ -40,7 +41,7 @@ public class Item {
         this.description = itemDTO.getDescription();
         this.imageUrl = itemDTO.getImageUrl();
         this.price = itemDTO.getPrice();
-        //this.category = getCategoryId();
+        this.category_id = itemDTO.getCategory_id();
 
         //to include the category ID
     }
@@ -93,6 +94,14 @@ public class Item {
 
     public double getPrice() {
         return price;
+    }
+
+    public String getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(String category_id) {
+        this.category_id = category_id;
     }
 
     @Override
