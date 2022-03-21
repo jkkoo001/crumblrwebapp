@@ -20,6 +20,9 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.mockito:mockito-inline:3.7.7'
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.7.7'
+
 }
 
 tasks.named('test') {
