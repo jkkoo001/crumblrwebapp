@@ -85,7 +85,7 @@ class ProductsController
                            name: item.name,
                            description: item.description,
                            imageUrl: item.imageUrl,
-                           price: item.price,
+                           price: item.price.toFixed(2),
                            category: item.category_id,
                       };
                       // push to array of objects

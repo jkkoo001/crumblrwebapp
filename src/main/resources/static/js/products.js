@@ -5,9 +5,9 @@ function categorySelect(selectedCategory) {
     productsControl.displayItem(selectedCategory);
 }
 
-//function loadData()
-//{
+function loadData()
+{
    productsControl.displayItem();
-//}
-//
-//loadData();
+}
+
+loadData();
