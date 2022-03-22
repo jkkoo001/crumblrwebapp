@@ -106,3 +106,14 @@ h1, h2, h3, h4, h5, h6 {
 #login{
     flex-grow: 1;
 }
+
+
+/* Active Category Styles */
+.category:focus {
+    box-shadow: 10px 10px 5px 2px #A9A9A9;
+    transform: scale(1.08);
+}
+
+.category:hover {
+    transform: scale(1.02);
+}
