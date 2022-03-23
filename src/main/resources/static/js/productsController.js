@@ -49,7 +49,8 @@ class ProductsController
                formData.append('category_id', category_id);
                formData.append('imagefile',imageObject);
 
-              fetch('http://localhost:8080/item/add', {
+              //fetch('http://localhost:8080/item/add', {
+              fetch('https://crumblrwebapp.herokuapp.com/item/add', {
                     method: 'POST',
                     body: formData
                     })
@@ -73,7 +74,8 @@ class ProductsController
            productController._items = [];
 
         //fetch data from database using the REST API endpoint from Spring Boot
-            fetch('http://localhost:8080/item/all')
+            //fetch('http://localhost:8080/item/all')
+            fetch('https://crumblrwebapp.herokuapp.com/item/all')
                .then((resp) => resp.json())
                .then(function(data) {
                    console.log("2. receive data")
