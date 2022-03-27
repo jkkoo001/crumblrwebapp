@@ -17,7 +17,7 @@ This basic e-commerce web application is mobile responsive and consists of the f
 - Brief welcome message
 - Shop contact information
     
-   <img width="500" alt="Home Screenshot" src="https://user-images.githubusercontent.com/97433108/160274799-4bc0d2d7-b778-4932-9c70-af83cee82531.png">
+  <img width="500" alt="Home Screenshot" src="https://user-images.githubusercontent.com/97433108/160274799-4bc0d2d7-b778-4932-9c70-af83cee82531.png">
 
 
 
@@ -25,7 +25,7 @@ This basic e-commerce web application is mobile responsive and consists of the f
 **2) About**
 - Information about the shop (values, core pillars, team introduction)
     
-   <img width="500" alt="About Screenshot" src="https://user-images.githubusercontent.com/97433108/160275033-9fa635fa-9688-4e56-85b1-15dc9f163dce.png">
+  <img width="500" alt="About Screenshot" src="https://user-images.githubusercontent.com/97433108/160275033-9fa635fa-9688-4e56-85b1-15dc9f163dce.png">
 
     
 
@@ -35,7 +35,7 @@ This basic e-commerce web application is mobile responsive and consists of the f
     
 - Products are listed below the categories
     
-    <img width="500" alt="Filter Product Screenshot" src="https://user-images.githubusercontent.com/97433108/160275128-0e2ac860-2f01-4b07-89ed-8b9131b67963.png">
+  <img width="500" alt="Filter Product Screenshot" src="https://user-images.githubusercontent.com/97433108/160275128-0e2ac860-2f01-4b07-89ed-8b9131b67963.png">
 
 
 
@@ -43,7 +43,7 @@ This basic e-commerce web application is mobile responsive and consists of the f
     
 - Clicking on Details button will show a popup with more information of the product
     
-    <img width="300" alt="Product Modal Screenshot" src="https://user-images.githubusercontent.com/97433108/160275169-4d5b10fd-3199-4e92-a793-4267fbc91058.png">
+  <img width="300" alt="Product Modal Screenshot" src="https://user-images.githubusercontent.com/97433108/160275169-4d5b10fd-3199-4e92-a793-4267fbc91058.png">
 
     
 
@@ -52,7 +52,7 @@ This basic e-commerce web application is mobile responsive and consists of the f
     
 - Allows admin(shop owner) to log in and add product.
     
-    <img width="500" alt="Login Screenshot" src="https://user-images.githubusercontent.com/97433108/160275204-933dd214-928c-4ba0-adf8-92583b1a0c0a.png">
+  <img width="500" alt="Login Screenshot" src="https://user-images.githubusercontent.com/97433108/160275204-933dd214-928c-4ba0-adf8-92583b1a0c0a.png">
 
  
  
@@ -65,7 +65,7 @@ This basic e-commerce web application is mobile responsive and consists of the f
   - Price
   - Select category from a dropdown list
       
-    <img width="500" alt="Add Product Screenshot" src="https://user-images.githubusercontent.com/97433108/160275225-88953b90-32f9-4e97-a1f2-c895cf359873.png">
+  <img width="500" alt="Add Product Screenshot" src="https://user-images.githubusercontent.com/97433108/160275225-88953b90-32f9-4e97-a1f2-c895cf359873.png">
 
 
 
