@@ -65,7 +65,8 @@ This basic e-commerce web application is mobile responsive and consists of the f
   - Price
   - Select category from a dropdown list
       
-  <img width="500" alt="Add Product Screenshot" src="https://user-images.githubusercontent.com/97433108/160275225-88953b90-32f9-4e97-a1f2-c895cf359873.png">
+  <img width="500" alt="Add Product Screenshot" src="https://user-images.githubusercontent.com/97433108/160278711-ebccd7a9-0758-43b4-84a4-272f9d7b5dc2.png">
+
 
 
 
