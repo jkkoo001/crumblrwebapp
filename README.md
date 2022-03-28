@@ -13,7 +13,7 @@ This basic e-commerce web application is mobile responsive and consists of the f
 
 
 **1) Home**
-- Image Carousel: important shop announcement/promotion to users
+- Image Carousel: display important shop announcement/promotion to users
 - Brief welcome message
 - Shop contact information
     
